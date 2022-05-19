@@ -124,4 +124,24 @@ describe("Category Unit Tests", () => {
     });
     expect(category.created_at).toBe(created_at);
   });
+
+  test("change name", () => {
+    let category = new Category({
+      name: "Movie",
+      description: "Terror movie",
+    });
+    expect(category.name).toBe("Movie");
+    category.changeName("Filme");
+    expect(category.name).toBe("Filme");
+  });
+
+  test("change description", () => {
+    let category = new Category({
+      name: "Movie",
+      description: "Terror movie",
+    });
+    expect(category.description).toBe("Terror movie");
+    category.changeDescription("Documentary movie");
+    expect(category.description).toBe("Documentary movie");
+  });
 });
