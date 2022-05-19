@@ -46,4 +46,12 @@ export class Category extends Entity<CategoryProperties> {
   changeDescription(description: string) {
     this.props.description = description;
   }
+
+  activate() {
+    this.props.is_active = true;
+  }
+
+  desactivate() {
+    this.props.is_active = false;
+  }
 }

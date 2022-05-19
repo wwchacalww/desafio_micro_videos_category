@@ -144,4 +144,16 @@ describe("Category Unit Tests", () => {
     category.changeDescription("Documentary movie");
     expect(category.description).toBe("Documentary movie");
   });
+
+  test("activate and desactivate", () => {
+    let category = new Category({
+      name: "Movie",
+      description: "Terror movie",
+    });
+    expect(category.is_active).toBeTruthy();
+    category.desactivate();
+    expect(category.is_active).toBeFalsy();
+    category.activate();
+    expect(category.is_active).toBeTruthy();
+  });
 });
