@@ -145,6 +145,18 @@ describe("Category Unit Tests", () => {
     expect(category.description).toBe("Documentary movie");
   });
 
+  test("update name and description", () => {
+    let category = new Category({
+      name: "Movie",
+      description: "Terror movie",
+    });
+    expect(category.name).toBe("Movie");
+    expect(category.description).toBe("Terror movie");
+    category.update("Filme", "Filme de Terror");
+    expect(category.name).toBe("Filme");
+    expect(category.description).toBe("Filme de Terror");
+  });
+
   test("activate and desactivate", () => {
     let category = new Category({
       name: "Movie",

@@ -54,4 +54,9 @@ export class Category extends Entity<CategoryProperties> {
   desactivate() {
     this.props.is_active = false;
   }
+
+  update(name: string, description: string) {
+    this.props.name = name;
+    this.props.description = description;
+  }
 }
